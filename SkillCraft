@@ -1,0 +1,9 @@
+import numpy as ny
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+data_train=pd.read_csv('/content/sample_data/mnist_train_small.csv')
+data_test=pd.read_csv('/content/sample_data/mnist_test.csv')
+plt.figure(figsize=(10,10))
+sns.heatmap(data_train.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+plt.plot(data_train.iloc[3,1:].values.reshape(28,28))
